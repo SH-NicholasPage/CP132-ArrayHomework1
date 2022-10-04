@@ -52,11 +52,11 @@ namespace ArrayHomework1
                 //I want to be as descriptive as possible with my error message. A general "bad input message" is a bad user experience.
                 if (BigInteger.TryParse(alphanumericInput, out _) == true)
                 {
-                    Console.WriteLine("'" + alphanumericInput + "' is too " + ((alphanumericInput.StartsWith('-')) ? "small" : "large") + "! Please try again!");
+                    Console.WriteLine("ERROR: '" + alphanumericInput + "' is too " + ((alphanumericInput.StartsWith('-')) ? "small" : "large") + "! Please try again!");
                 }
                 else
                 {
-                    Console.WriteLine("'" + alphanumericInput + "' is not a number! Please try again!");
+                    Console.WriteLine("ERROR: '" + alphanumericInput + "' is not a number! Please try again!");
                 }
                 alphanumericInput = Console.ReadLine();
             }
@@ -96,7 +96,7 @@ namespace ArrayHomework1
             while(decision.Equals("yes", StringComparison.OrdinalIgnoreCase) == false &&
                 decision.Equals("no",StringComparison.OrdinalIgnoreCase) == false)
             {
-                Console.WriteLine("'" + decision + "' was not a valid input! Please try again!");
+                Console.WriteLine("ERROR: '" + decision + "' was not a valid input! Please try again!");
                 Console.WriteLine("Would you like to sum five more numbers? Please type in 'yes' or 'no'.");
                 decision = Console.ReadLine();
             }
