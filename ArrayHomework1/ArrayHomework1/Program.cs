@@ -5,6 +5,9 @@ namespace ArrayHomework1
 {
     class Program
     {
+        const byte UNDERFLOW_CODE = 1;
+        const byte OVERFLOW_CODE = 2;
+
         static void Main()
         {
             bool goAgain = true;
@@ -21,11 +24,11 @@ namespace ArrayHomework1
 
                 byte underOverflowCheck = CheckForOverUnderflow(number1, number2, number3, number4, number5);
 
-                if(underOverflowCheck == 1)
+                if(underOverflowCheck == UNDERFLOW_CODE)
                 {
                     Console.WriteLine("ERROR: The sum of your numbers is too low!");
                 }
-                else if(underOverflowCheck == 2)
+                else if(underOverflowCheck == OVERFLOW_CODE)
                 {
                     Console.WriteLine("ERROR: The sum of your numbers is too large!");
                 }
@@ -117,11 +120,11 @@ namespace ArrayHomework1
 
             if(sum < Int32.MinValue)
             {
-                return 1;//If an underflow would happen, return 1
+                return UNDERFLOW_CODE;//If an underflow would happen, return UNDERFLOW_CODE
             }
             else if(sum > Int32.MaxValue)
             {
-                return 2;//If an overflow would happen, return 2
+                return OVERFLOW_CODE;//If an overflow would happen, return OVERFLOW_CODE
             }
             else
             {
