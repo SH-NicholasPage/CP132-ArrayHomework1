@@ -71,6 +71,7 @@ namespace ArrayHomework1
             return Convert.ToInt32(alphanumericInput);
         }
 
+        //DO NOT MODIFY THIS METHOD!
         static String GetNumberSuffix(int num)
         {
             if(num > 10 && num < 20)
